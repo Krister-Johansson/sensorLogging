@@ -57,6 +57,24 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+## Prisma setup
+
+This project uses [Prisma](https://www.prisma.io/) with PostgreSQL. Copy `.env.example` to `.env` and update the `DATABASE_URL` variable.
+
+Generate the client:
+
+```bash
+npx prisma generate
+```
+
+Apply migrations:
+
+```bash
+npx prisma migrate dev
+```
+
+The `PrismaModule` is marked as global, so you only need to import it once in `AppModule`.
+
 ## Deployment
 
 When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
